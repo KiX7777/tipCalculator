@@ -102,5 +102,9 @@ reset.addEventListener('click', () => {
     billInput.value = '';
     peopleInput.value = '0';
     reset.classList.remove('resetActive');
+    customInput.classList.remove('selected');
+    customInput.value = '';
+
+    buttons.forEach((but) => but.classList.remove('selected'));
   }
 });
