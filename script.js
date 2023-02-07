@@ -104,6 +104,7 @@ reset.addEventListener('click', () => {
     reset.classList.remove('resetActive');
     customInput.classList.remove('selected');
     customInput.value = '';
+    billInput.style.outline = '';
 
     buttons.forEach((but) => but.classList.remove('selected'));
   }
