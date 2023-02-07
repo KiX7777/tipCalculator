@@ -1,0 +1,223 @@
+$primarycyan: hsl(172, 67%, 45%);
+$neutraldark: hsl(183, 100%, 15%);
+$neutraldarkgrey: hsl(186, 14%, 43%);
+$neutrallightcyan: hsl(185, 41%, 84%);
+$verylightcyan: hsl(189, 41%, 97%);
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+@mixin flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body {
+  height: 100vh;
+  background-color: $neutrallightcyan;
+  font-family: 'Space Mono', monospace;
+  // background-image: url(/);
+  @include flex();
+  flex-direction: column;
+  gap: 5rem;
+}
+.container {
+  width: 70rem;
+  height: 45%;
+  @include flex();
+  background-color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  gap: 2rem;
+}
+.left,
+.right {
+  @include flex();
+  flex-direction: column;
+}
+.billInput,
+.people {
+  @include flex();
+  flex-direction: column;
+  align-self: flex-start;
+  width: 100%;
+  align-items: flex-start;
+  position: relative;
+}
+.left {
+  padding: 1rem;
+  gap: 2rem;
+  width: 50%;
+}
+.right {
+  background-color: $neutraldark;
+  color: white;
+  @include flex();
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 2rem;
+  width: 50%;
+  border-radius: 1rem;
+}
+.billInput,
+.people,
+.selectTip {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.cards {
+  width: 100%;
+}
+.card {
+  @include flex();
+  padding: 1rem;
+}
+.info,
+.price {
+  flex: 1 1 0;
+}
+.price {
+  text-align: right;
+  font-size: 3.2rem;
+  color: $primarycyan;
+}
+.left input {
+  padding: 0.8rem;
+  background-color: $verylightcyan;
+  width: 100%;
+  border: none;
+  border-radius: 0.25rem;
+  color: $neutrallightcyan;
+  text-align: right;
+  color: #0d686d6b;
+  opacity: 1;
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+
+.buttonPct:focus {
+  outline: $primarycyan 1px solid;
+}
+.left input:focus {
+  outline: none;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #0d686d6b;
+  opacity: 1;
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+
+.selectTip {
+  width: 100%;
+}
+.buttonsCont {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.left {
+  h3,
+  label {
+    color: $neutraldarkgrey;
+  }
+}
+
+.buttonsCont button {
+  background-color: $neutraldark;
+  font-family: 'Space Mono';
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: 300ms all;
+  padding: 0.8rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  color: white;
+}
+
+.buttonsCont button:hover,
+.custom:hover {
+  background-color: #9fe8dd;
+}
+.custom:focus {
+  background-color: white;
+}
+#number {
+  position: relative;
+}
+
+.custom::placeholder {
+  text-align: center;
+}
+.custom {
+  cursor: pointer;
+  transition: 300ms all;
+}
+
+.custom:focus {
+  outline: 2px solid $primarycyan;
+  cursor: text;
+}
+
+.custom::-webkit-outer-spin-button,
+.custom::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+#bill::-webkit-outer-spin-button,
+#bill::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+.peopleIcon,
+.billIcon {
+  position: absolute;
+  background-image: url(/images/icon-person.svg);
+  // background-size: 20px
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 12px;
+  height: 12px;
+  top: 60%;
+  left: 1rem;
+  // transform: translateY(-50%);
+}
+
+.billIcon {
+  background-image: url(/images/icon-dollar.svg);
+}
+.right button {
+  padding: 0.8rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  color: #075e65;
+  font-weight: bold;
+  background-color: #0d686d;
+  width: 100%;
+  transition: 300ms all;
+  cursor: pointer;
+}
+
+.right button.resetActive {
+  background-color: $primarycyan;
+}
+
+.buttonsCont .selected {
+  background-color: $primarycyan;
+  color: $neutraldark;
+}
