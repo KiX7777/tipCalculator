@@ -105,6 +105,7 @@ reset.addEventListener('click', () => {
     customInput.classList.remove('selected');
     customInput.value = '';
     billInput.style.outline = '';
+    peopleInput.style.outline = '';
 
     buttons.forEach((but) => but.classList.remove('selected'));
   }
