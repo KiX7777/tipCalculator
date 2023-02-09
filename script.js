@@ -21,6 +21,10 @@ peopleInput.addEventListener('input', () => {
   let v = parseInt(peopleInput.value);
   if (v > 1000) peopleInput.value = peopleInput.max;
   if (v < 0) peopleInput.value = peopleInput.min;
+
+  if (peopleInput.value === '') {
+    peopleInput.value = '0';
+  }
 });
 billInput.addEventListener('input', () => {
   // console.log(peopleInput.validity.valid);
