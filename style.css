@@ -236,10 +236,7 @@ body {
   color: hsl(183deg, 100%, 15%);
 }
 
-@media (max-width: 400px) {
-  html {
-    font-size: 70%;
-  }
+@media (max-width: 450px) {
   .container {
     flex-direction: column;
     height: fit-content;
