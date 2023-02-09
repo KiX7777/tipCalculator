@@ -25,6 +25,7 @@ peopleInput.addEventListener('input', () => {
   if (peopleInput.value === '') {
     peopleInput.value = '0';
   }
+  peopleInput.value = peopleInput.value.replace(/^[0]+/g, '');
 });
 billInput.addEventListener('input', () => {
   // console.log(peopleInput.validity.valid);
