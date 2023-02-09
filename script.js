@@ -77,7 +77,13 @@ customInput.addEventListener('click', () => {
 function calculateTip(price, people) {
   let selectedTip = document.querySelector('.selected');
   let sum;
-  if (!selectedTip || !billInput.value || peopleInput.value === '0') return;
+  if (
+    !selectedTip ||
+    !billInput.value ||
+    peopleInput.value === '0' ||
+    peopleInput.value === ''
+  )
+    return;
   else {
     if (customInput.classList.contains('selected')) {
       sum = price * (customInput.value / 100);
