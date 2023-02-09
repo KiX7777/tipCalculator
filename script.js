@@ -82,7 +82,7 @@ function calculateTip(price, people) {
     let tipAmount = (sum / peopleInput.value).toFixed(2);
     console.log(tipAmount);
     pricevalue.textContent = tipAmount;
-    let total = +price + +tipAmount;
+    let total = (+price + +tipAmount) / peopleInput.value;
     totalValue.textContent = total.toFixed(2);
     reset.classList.add('resetActive');
   }
