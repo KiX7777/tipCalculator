@@ -221,3 +221,36 @@ body {
   background-color: $primarycyan;
   color: $neutraldark;
 }
+
+@media (max-width: 400px) {
+  html {
+    font-size: 70%;
+  }
+  .container {
+    flex-direction: column;
+    height: fit-content;
+    width: 100%;
+  }
+  .buttonsCont {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .buttonsCont button {
+    font-size: 2.4rem;
+  }
+  .info p {
+    font-size: 1.4rem;
+  }
+  body {
+    gap: 2rem;
+  }
+  .left,
+  .right {
+    width: 100%;
+  }
+  .left label {
+    font-size: 1.4rem;
+  }
+  .left input {
+    font-size: 1.8rem;
+  }
+}
