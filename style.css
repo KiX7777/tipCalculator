@@ -212,7 +212,8 @@ body {
 }
 
 .billIcon {
-  background-image: url(/images/icon-dollar.svg);
+  background-image: url("./images/euro.svg");
+  opacity: 0.5;
 }
 
 .right button {
